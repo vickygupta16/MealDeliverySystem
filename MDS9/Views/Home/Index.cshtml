@@ -1,0 +1,159 @@
+﻿<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="shortcut icon" type="image/x-icon" href="~/Content/themes/base/images/Logo1.jpg"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            .ul2{
+                font-size: 20px;
+                color:blue;
+                padding-left:40px;
+            }
+            .li2{
+                color: blue;
+                display:inline;
+            }
+            .li2 a{
+                color: blue;
+                text-decoration:none;
+            }
+            .mysec {
+                font-size:18px;
+            }
+            .nav-item {
+                padding:10px;
+            }
+             .mysec a:hover{
+                    text-decoration:none;
+                    background-color:yellow;
+                    padding:5px;
+                    border-radius:5px;
+                }
+            .ul3 {
+                line-height: 40px;
+            }
+            .li3 a{
+                text-decoration: none;
+            }
+            .li3 {
+                list-style: none;
+            }
+            .card .img-top1 {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 99;
+            }
+            .card:hover .img-top1 {
+                display:inline;
+            }
+            .card .img-top2 {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 99;
+            }
+            .card:hover .img-top2 {
+                display:inline;
+            }
+            .card .img-top3 {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 99;
+            }
+            .card:hover .img-top3 {
+                display:inline;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            function openRightMenu() {
+                document.getElementById("rightMenu").style.display = "block";
+            }
+
+            function closeRightMenu() {
+                document.getElementById("rightMenu").style.display = "none";
+            }
+        </script>
+    </head>
+    <body>
+        <header style="background-color:black;padding:10px">
+                <div style="text-align:center">
+                    <section class="mysec">
+                        <ul class="nav justify-content-center">
+                          <li class="nav-item li2">
+                            @Html.ActionLink("Home", "Index", "Home")
+                          </li>
+                          <li class="nav-item li2">
+                            @Html.ActionLink("About", "About", "Home")
+                          </li>
+                          <li class="nav-item li2">
+                            @Html.ActionLink("Contact", "Contact", "Home")
+                          </li>
+                          <li class="nav-item li2">
+                              @{Html.RenderPartial("_LoginPartial");}
+                          </li>
+                        </ul>
+                    </section>
+                </div>
+        </header>   
+            <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;background-color:lightyellow" 
+                id="rightMenu">
+              <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+              <ul class="ul3">
+                  <li class="li3">@Html.ActionLink("Home","Index","Home")</li>
+                  <li class="li3">@Html.ActionLink("About Us","About","Home")</li>
+                  <li class="li3">@Html.ActionLink("Contact Us","Contact","Home")</li>
+                  <li class="li3">@Html.ActionLink("Order Meal","Create","Order")</li>
+                  <li class="li3">@Html.ActionLink("Order List","Index","Order")</li>
+                  <li class="li3">@Html.ActionLink("Meal List","MealList","Order")</li>
+              </ul>
+            </div>
+            <div class="w3-teal">
+              <button class="w3-button w3-teal w3-xlarge w3-right" onclick="openRightMenu()">&#9776;</button>
+            </div>
+
+            <h2 align="center">User Home</h2>
+
+            <br /><br /><br />
+            <div class="row" align="center">
+                <div class="col-md-6">
+                    <div class="card" style="width:300px;">
+                        <img src="~/Content/themes/base/images/school2.jpg" class="img-top1" alt="School" style="height:200px;width:300px"/>
+                        <img src="~/Content/themes/base/images/school1.jpg" class="card-img-top" alt="School" style="height:200px;">
+                        <div class="card-body" style="background-color:lightcyan">
+                        <h5 class="card-title" style="font-size:24px;font-weight:bolder">School</h5>
+                    </div>
+                </div>
+            </div>
+                <div class="col-md-6">
+                    <div class="card" style="width:300px">
+                    <img src="~/Content/themes/base/images/canteen2.jpg" class="img-top2" alt="Canteen" style="height:200px;width:300px"/>
+                      <img src="~/Content/themes/base/images/canteen1.jpg" class="card-img-top" alt="Canteen" style="height:200px">
+                      <div class="card-body" style="background-color:lightcyan">
+                        <h5 class="card-title" style="font-size:24px;font-weight:bolder">Canteen</h5>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            
+        <br /><br />
+        <div class="row" align="center">
+            <div class="col-md-12">
+                <div class="card" style="width:300px;">
+                    <img src="~/Content/themes/base/images/md2.jpg" class="img-top2" alt="Meal" style="height:200px;width:300px"/>
+                    <img src="~/Content/themes/base/images/md1.jpg" class="card-img-top" alt="Meal" style="height:200px;">
+                    <div class="card-body" style="background-color:lightcyan">
+                        <h5 class="card-title" style="font-size:24px;font-weight:bolder">Meal Delivery</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        </body>
+    </html>

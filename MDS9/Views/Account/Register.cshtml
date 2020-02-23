@@ -1,0 +1,116 @@
+﻿@model MDS9.Models.RegisterModel
+<html>
+    <head>
+        <title>Register</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="shortcut icon" type="image/x-icon" href="~/Content/themes/base/images/Logo1.jpg"/>
+        <style>
+            .mysec {
+                font-size:18px;
+            }
+            .nav-item {
+                padding:10px;
+            }
+            .mysec a:hover{
+                text-decoration:none;
+                background-color:yellow;
+                padding:5px;
+                border-radius:5px;
+            }
+            .card {
+                width: 700px;
+                text-align:center;
+                background-color:whitesmoke;
+                margin:auto;
+                margin-top:30px;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#sidebar-btn').on('click', function () {
+                    $('#sidebar').toggleClass('visible');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <header style="background-color:black;padding:10px">
+            <div style="text-align:center">
+                <section class="mysec">
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item">
+                            @Html.ActionLink("Home", "Index", "Home")
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("About", "About", "Home")
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Contact", "Contact", "Home")
+                        </li>
+                        <li class="nav-item">
+                              @{Html.RenderPartial("_LoginPartial");}
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </header>  
+        
+        <div class="card">
+            <h5 class="card-header">Registeration</h5>
+            <div class="card-body">
+                @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <table align="center" style="text-align:center" cellpadding="5px">
+        <tr>
+            <td><label for="UserName">Email ID</label></td>
+            <td>@Html.LabelFor(m=>m.NOC)</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(m => m.UserName)</td>
+            <td>@Html.TextBoxFor(m=>m.NOC)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Password)</td>
+            <td>@Html.LabelFor(m => m.ConfirmPassword)</td>
+        </tr>
+        <tr>
+            <td>@Html.PasswordFor(m => m.Password)</td>
+            <td>@Html.PasswordFor(m => m.ConfirmPassword)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m=>m.FName)</td>
+            <td>@Html.LabelFor(m=>m.LName)</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(m=>m.FName)</td>
+            <td>@Html.TextBoxFor(m=>m.LName)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m=>m.Gender)</td>
+            <td>@Html.LabelFor(m=>m.Address)</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="Gender" value="Male">Male
+                <input type="radio" name="Gender" value="Female">Female
+            </td>
+            <td>@Html.TextAreaFor(m=>m.Address)</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Register" class="btn btn-success" /></td>
+        </tr>
+    </table>
+}
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

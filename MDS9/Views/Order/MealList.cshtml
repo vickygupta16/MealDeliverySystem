@@ -1,0 +1,120 @@
+﻿@model IEnumerable<MDS9.Models.Meal>
+<html>
+    <head>
+        <title>Meal List</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="shortcut icon" type="image/x-icon" href="~/Content/themes/base/images/Logo1.jpg"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            .ul2{
+                font-size: 20px;
+                color:blue;
+                padding-left:40px;
+            }
+            .li2{
+                color: blue;
+                display:inline;
+            }
+            .li2 a{
+                color: blue;
+                text-decoration:none;
+            }
+            .mysec {
+                font-size:18px;
+            }
+            .nav-item {
+                padding:10px;
+            }
+             .mysec a:hover{
+                    text-decoration:none;
+                    background-color:yellow;
+                    padding:5px;
+                    border-radius:5px;
+                }
+            .ul3 {
+                line-height: 40px;
+            }
+            .li3 a{
+                text-decoration: none;
+            }
+            .li3 {
+                list-style: none;
+            }
+            .card {
+            width: 800px;
+            text-align:center;
+            background-color:whitesmoke;
+            margin:auto;
+            margin-top:30px;
+        }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            function openRightMenu() {
+                document.getElementById("rightMenu").style.display = "block";
+            }
+
+            function closeRightMenu() {
+                document.getElementById("rightMenu").style.display = "none";
+            }
+        </script>
+    </head>
+    <body>
+        <header style="background-color:black;padding:10px">
+                <div style="text-align:center">
+                    <section class="mysec">
+                        <ul class="nav justify-content-center">
+                          <li class="nav-item li2">
+                            @Html.ActionLink("Home", "Index", "Home")
+                          </li>
+                          <li class="nav-item li2">
+                            @Html.ActionLink("About", "About", "Home")
+                          </li>
+                          <li class="nav-item li2">
+                            @Html.ActionLink("Contact", "Contact", "Home")
+                          </li>
+                          <li class="nav-item li2">
+                              @{Html.RenderPartial("_LoginPartial");}
+                          </li>
+                        </ul>
+                    </section>
+                </div>
+        </header>   
+            <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;background-color:lightyellow" 
+                id="rightMenu">
+              <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+              <ul class="ul3">
+                  <li class="li3">@Html.ActionLink("Home","Index","Home")</li>
+                  <li class="li3">@Html.ActionLink("About Us","About","Home")</li>
+                  <li class="li3">@Html.ActionLink("Contact Us","Contact","Home")</li>
+                  <li class="li3">@Html.ActionLink("Order Meal","Create","Order")</li>
+                  <li class="li3">@Html.ActionLink("Order List","Index","Order")</li>
+                  <li class="li3">@Html.ActionLink("Meal List","MealList","Order")</li>
+              </ul>
+            </div>
+            <div class="w3-teal">
+              <button class="w3-button w3-teal w3-xlarge w3-right" onclick="openRightMenu()">&#9776;</button>
+            </div>
+        <div class="card" style="background-color:#B9770E">
+            <h5 class="card-header">Meal List</h5>
+            <div class="card-body" style="background-color:#F8C471">
+                <table cellpadding="5px" align="center" style="text-align:center;"
+                    rules="rows" frame="hsides">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Name)</th>
+                        <th>@Html.DisplayNameFor(model => model.Description)</th>
+                        <th>@Html.DisplayNameFor(model => model.Price)</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

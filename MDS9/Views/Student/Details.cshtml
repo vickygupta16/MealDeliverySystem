@@ -1,0 +1,64 @@
+﻿@model MDS9.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Student</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ups.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ups.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Fname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Lname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Lname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Class)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Class)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Division)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Division)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RollNo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RollNo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Age)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Age)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.StudentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

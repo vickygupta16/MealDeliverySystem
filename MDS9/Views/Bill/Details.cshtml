@@ -1,0 +1,43 @@
+﻿@model MDS9.Models.Bill
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Bill</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ups.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ups.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.s7.Fname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.s7.Fname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TotalBill)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TotalBill)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.BillId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

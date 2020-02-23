@@ -1,0 +1,219 @@
+﻿<html>
+    <head>
+        <title>Admin Home</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="shortcut icon" type="image/x-icon" href="~/Content/themes/base/images/Logo1.jpg"/>
+        <style>
+            #sidebar {
+              width: 200px;
+              background: #2c3e50;
+              position: absolute;
+              height: 100%;
+              top: 0;
+              left: -200px;
+              transition: left 0.5s ease;
+            }
+            #sidebar.visible {
+              left: 0px;
+              transition: left 0.7s ease;
+            }
+            .ul2 {
+              margin: 0;
+              padding: 0;
+            }
+            .li2 {
+              list-style: none;
+              padding: 10px 0 10px 10px;
+              background: #46637F;
+              border-bottom: 1px solid #233140;
+            }
+            .li2 a {
+              text-decoration: none;
+              color: white;
+            }
+            #sidebar-btn {
+              display: inline-block;
+              vertical-align: middle;
+              width: 20px;
+              height: 15px;
+              cursor: pointer;
+              margin: 20px;
+              position: absolute;
+              right: -60px;
+              top: 0px;
+            }
+            #sidebar-btn span {
+              background-color: yellow;
+              height: 2px;
+              display: block;
+              margin-bottom: 5px;
+            }
+            #sidebar-btn span:nth-child(2) {
+              width: 75%;
+            }
+            .ul1{
+                font-size: 20px;
+                color:blue;
+                padding-left:40px;
+            }
+            .li1 {
+                color: blue;
+                display:inline;
+            }
+            .li1 a{
+                color: blue;
+                text-decoration:none;
+            }
+            .mysec {
+                font-size:18px;
+            }
+            .nav-item {
+                padding:10px;
+            }
+            .mysec a:hover{
+                text-decoration:none;
+                background-color:yellow;
+                padding:5px;
+                border-radius:5px;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function () {
+            $('#sidebar-btn').on('click', function () {
+                $('#sidebar').toggleClass('visible');
+            });
+        });
+        </script>
+    </head>
+    <body>
+        
+        <header style="background-color:black;padding:10px">
+                <div style="text-align:center">
+                    <section class="mysec">
+                        <ul class="nav justify-content-center">
+                          <li class="nav-item">
+                            @Html.ActionLink("Home", "Index", "Home")
+                          </li>
+                          <li class="nav-item">
+                            @Html.ActionLink("About", "About", "Home")
+                          </li>
+                          <li class="nav-item">
+                            @Html.ActionLink("Contact", "Contact", "Home")
+                          </li>
+                          <li class="nav-item">
+                              @{Html.RenderPartial("_LoginPartial");}
+                          </li>
+                        </ul>
+                    </section>
+                </div>
+        </header>   
+        <br />
+        <div class="container">
+            <h2 align="center">Admin Home</h2>
+        </div>
+        <br />
+        <div class="row" align="center">
+            <div class="col-md-4">
+                <div class="card" style="width:18rem;">
+                    <img src="~/Content/themes/base/images/meal1.jpg" class="card-img-top" alt="Meal" style="height:200px">
+                    <div class="card-body" style="text-align:center;background-color:greenyellow">
+                        <hr style="height:2px;background-color:black"/>
+                        <h5 class="card-title">Add Meal</h5>
+                        <hr  style="height:2px;background-color:black"/>
+                        <p class="card-text">Add Meal Name, Meal Description & Meal Price for some more delicious content.</p>
+                        <hr  style="height:2px;background-color:black"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width:18rem;">
+                    <img src="~/Content/themes/base/images/meal2.jpg" class="card-img-top" alt="Meal" style="height:200px">
+                    <div class="card-body" style="text-align:center;background-color:greenyellow">
+                        <hr style="height:2px;background-color:black"/>
+                        <h5 class="card-title">Edit Meal</h5>
+                        <hr style="height:2px;background-color:black"/>
+                        <p class="card-text">Edit Meal Name, Description or Price if some of the data input gone wrong.</p>
+                        <hr style="height:2px;background-color:black"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width:18rem">
+                    <img src="~/Content/themes/base/images/meal3.jpg" class="card-img-top" alt="Meal" style="height:200px">
+                    <div class="card-body" style="text-align:center;background-color:greenyellow">
+                        <hr style="height:2px;background-color:black"/>
+                        <h5 class="card-title">Remove Meal</h5>
+                        <hr style="height:2px;background-color:black"/>
+                        <p class="card-text">Remove / Delete Meal which are outdated or not much ordered by Student's Parents.</p>
+                        <hr style="height:2px;background-color:black"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row" align="center">
+            <div class="col-md-4">
+                <div class="card" style="width:18rem;">
+                    <img src="~/Content/themes/base/images/student1.jpg" class="card-img-top" alt="Meal" style="height:200px">
+                    <div class="card-body" style="text-align:center;background-color:lightsteelblue">
+                        <hr style="height:2px;background-color:black"/>
+                        <h5 class="card-title">Add Student Record</h5>
+                        <hr  style="height:2px;background-color:black"/>
+                        <p class="card-text">Add Student Record for new Admission or for Students that have passed and appearing in higher class.</p>
+                        <hr  style="height:2px;background-color:black"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width:18rem;">
+                    <img src="~/Content/themes/base/images/student2.jpg" class="card-img-top" alt="Meal" style="height:200px">
+                    <div class="card-body" style="text-align:center;background-color:lightsteelblue">
+                        <hr style="height:2px;background-color:black"/>
+                        <h5 class="card-title">Edit Student Record</h5>
+                        <hr style="height:2px;background-color:black"/>
+                        <p class="card-text">Edit / Update Student Record which had wrong input while entering data.</p>
+                        <hr style="height:2px;background-color:black"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width:18rem">
+                    <img src="~/Content/themes/base/images/student3.jpg" class="card-img-top" alt="Meal" style="height:200px">
+                    <div class="card-body" style="text-align:center;background-color:lightsteelblue">
+                        <hr style="height:2px;background-color:black"/>
+                        <h5 class="card-title">Remove Student Record</h5>
+                        <hr style="height:2px;background-color:black"/>
+                        <p class="card-text">Remove Student Record who have left the School or Students who are going to higher class.</p>
+                        <hr style="height:2px;background-color:black"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+
+        <div id="sidebar">
+            <ul class="ul2">
+              <li class="li2">@Html.ActionLink("Home","Index", "Home")</li>
+              <li class="li2">@Html.ActionLink("Add Meal","Create","Meal")</li>
+              <li class="li2">@Html.ActionLink("Meal List","Index","Meal")</li>
+              <li class="li2">@Html.ActionLink("Autogenerated Bill List","BillList","Bill")</li>
+              <li class="li2">@Html.ActionLink("Generate Bill","Create","Bill")</li>
+              <li class="li2">@Html.ActionLink("Add Student","Create","Student")</li>
+              <li class="li2">@Html.ActionLink("Student List","Index","Student")</li>
+                <li></li>
+              <li class="li2">@Html.ActionLink("Meal Order Data","Index","Data")</li>
+              <li class="li2">@Html.ActionLink("Parent Data","ParentData","Data")</li>
+              <li class="li2">@Html.ActionLink("Student Data","StudentData","Data")</li>
+              <li class="li2">@Html.ActionLink("Bill Data","BillData","Data")</li>
+              <li class="li2">@Html.ActionLink("Meal Data","MealData","Data")</li>
+            </ul>
+            <div id="sidebar-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </body>
+</html>
+
